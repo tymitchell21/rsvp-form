@@ -1,0 +1,83 @@
+html
+  head
+    title= "RSVP Form"
+    meta(
+        name="viewport" 
+        content="width=device-width, initial-scale=1"
+    )
+    link(
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css"
+    )
+  body(
+      class="container is-fluid"
+  )
+    h1(
+        class="title"
+    )= 'Please RSVP!'
+    form(
+        style="max-width: 400px;"
+        id="form"
+        action="/reply"
+        method="POST"
+    )
+        input(
+            class="input is-primary" 
+            type="text"
+            placeholder="Name"
+            name="name"
+        )
+        br
+        input(
+            class="input is-info" 
+            type="email" 
+            placeholder="Email"
+            name="email"
+        )
+        br
+        div(
+            class="control"
+        )
+            label(
+                class="radio"
+            )= "Going "
+                input(
+                    type="radio" 
+                    name="rsvp"
+                    value=1
+                )
+            label(
+                class="radio"
+            )= "Not Going "
+                input(
+                    type="radio" 
+                    name="rsvp"
+                    value=0
+                )
+        br
+        label(
+            class= "title is-5"
+        )= "Number of Guests: "
+        div(
+            class="select is-warning"
+        )
+            select(
+                name="guests"
+            )
+                label= "Number of Guests: "
+                option= 0
+                option= 1
+                option= 2
+                option= 3
+                option= 4
+                option= 5
+                option= 6
+                option= 7
+                option= 8
+        br
+        br
+        input(
+            class="input is-danger" 
+            type="submit" 
+            placeholder="Submit"
+        )
